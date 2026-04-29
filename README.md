@@ -23,7 +23,7 @@ To address these issues, we propose **OGSA-YOLO**, an end-to-end instance segmen
 ---
 
 ## ✨ 2. Key Algorithms Description (核心算法描述)
-To fulfill the requirements of high-precision monitoring, our framework integrates four novel core components (implemented in `CDA.py`):
+To fulfill the requirements of high-precision monitoring, our framework integrates four novel core components :
 
 - **ODP-Conv (Omni-Directional Perception Dynamic Convolution)**: Introduced in the shallow and neck networks to endow the model with explicit geometric direction perception capability via asymmetric dynamic weights.
 - **GSDF-Block (Gated Spatio-Dynamic Fusion Block)**: Utilized in the deep layers to intelligently aggregate global context through an adaptive gating mechanism, ensuring the feature integrity of large-scale targets.
