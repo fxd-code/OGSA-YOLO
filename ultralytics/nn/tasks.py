@@ -1,5 +1,4 @@
 # Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
-from .Addmodules import *
 import contextlib
 import pickle
 import re
@@ -97,6 +96,8 @@ from ultralytics.utils.torch_utils import (
     smart_inference_mode,
     time_sync,
 )
+
+from .Addmodules import *
 
 
 class BaseModel(torch.nn.Module):
@@ -1584,7 +1585,7 @@ def parse_model(d, ch, verbose=True):
             SPPF,
             C2fPSA,
             C2PSA,
-            C2PSASCSAB, 
+            C2PSASCSAB,
             DWConv,
             Focus,
             BottleneckCSP,
@@ -1608,7 +1609,9 @@ def parse_model(d, ch, verbose=True):
             PSA,
             SCDown,
             C2fCIB,
-            A2C2f,C3k2_ODConv_Advanced,C3k2_HybridFusion,
+            A2C2f,
+            C3k2_ODConv_Advanced,
+            C3k2_HybridFusion,
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1627,7 +1630,9 @@ def parse_model(d, ch, verbose=True):
             C2fPSA,
             C2fCIB,
             C2PSA,
-            A2C2f,C3k2_ODConv_Advanced,C3k2_HybridFusion,
+            A2C2f,
+            C3k2_ODConv_Advanced,
+            C3k2_HybridFusion,
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
@@ -1667,8 +1672,10 @@ def parse_model(d, ch, verbose=True):
                 legacy = False
         elif m is AIFI:
             args = [ch[f], *args]
-         # 注意力机制
-        elif m in {SCSAB,}:
+        # 注意力机制
+        elif m in {
+            SCSAB,
+        }:
             c2 = ch[f]
             args = [c2, *args]
         # 注意力机制
@@ -1729,7 +1736,7 @@ def parse_model(d, ch, verbose=True):
             c1 = [ch[x] for x in f]
             c2 = make_divisible(args[0] * width, 8)
             args = [c1, c2, args[1]]  # [c1, c2, num_classes]
-        # ------------------------------AMFAM---------------------------------    
+        # ------------------------------AMFAM---------------------------------
         elif m is CBLinear:
             c2 = args[0]
             c1 = ch[f]
