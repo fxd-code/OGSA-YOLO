@@ -1,5 +1,5 @@
 # Base requirements for OGSA-YOLO (based on Ultralytics)
-ultralytics>=8.3.0
+ultralytics>=8.4.43
 torch>=2.0.0
 torchvision>=0.15.0
 torchaudio>=2.0.0
