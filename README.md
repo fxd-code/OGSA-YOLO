@@ -4,7 +4,7 @@
 
 **The official PyTorch implementation for conveyor belt monitoring in complex underground coal mines.**
 <br>
-Submitted to *The Visual Computer* (TVC)
+Submitted to _The Visual Computer_ (TVC)
 
 [![DOI](https://zenodo.org/badge/DOI/YOUR_DOI_HERE.svg)](https://doi.org/YOUR_DOI_HERE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -16,13 +16,15 @@ Submitted to *The Visual Computer* (TVC)
 ---
 
 ## 🌟 1. Introduction
-The precise parsing of the conveyor belt's operating status constitutes the core challenge in intelligent mining. Existing detection technologies still face severe challenges when confronting complex scenarios typical of underground coal mines, such as **high dust concentration, extremely low illumination, and motion blur**. 
+
+The precise parsing of the conveyor belt's operating status constitutes the core challenge in intelligent mining. Existing detection technologies still face severe challenges when confronting complex scenarios typical of underground coal mines, such as **high dust concentration, extremely low illumination, and motion blur**.
 
 To address these issues, we propose **OGSA-YOLO**, an end-to-end instance segmentation and information fusion framework based on YOLOv11. It fundamentally resolves multi-scale feature perception conflicts and efficiently suppresses unstructured noise under complex working conditions.
 
 ---
 
 ## ✨ 2. Key Algorithms Description (核心算法描述)
+
 To fulfill the requirements of high-precision monitoring, our framework integrates four novel core components :
 
 - **ODP-Conv (Omni-Directional Perception Dynamic Convolution)**: Introduced in the shallow and neck networks to endow the model with explicit geometric direction perception capability via asymmetric dynamic weights.
@@ -47,3 +49,4 @@ conda activate ogsayolo
 
 # Install dependencies
 pip install -r requirements.txt
+```
